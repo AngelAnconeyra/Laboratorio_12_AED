@@ -25,7 +25,7 @@ class Grafo{
         int EncuentraI0(vector<int>);
         void DecrementaIndigree(vector<vector<int>>,vector<int> &,int);
         void ordenTopologico(vector<vector<int>>,vector<int>&);
-        void print();
+        void print(string);
         void print(ofstream &);
 };
 
@@ -215,8 +215,8 @@ void Grafo<T,A>::print(ofstream &os) {
 }
 
 template<class T, class A>
-void Grafo<T,A>::print(){
-    ofstream os("Grafo.dot");
+void Grafo<T,A>::print(string file){
+    ofstream os(file.c_str());
     os << "digraph G{\n";
     os << "label = Grafo;\n";
     os << "node [shape=circle color = black];\n";
