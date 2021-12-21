@@ -4,7 +4,8 @@
 #include "Grafo.h"
 using namespace std;
 
-
+string grafo = "Grafo.dot";
+string caminoMinimo = "Camino.dot";
 
 int main(){
     Grafo<string,int> G;
@@ -39,6 +40,20 @@ int main(){
     G.insertarNodo("Estadistica y probalidiades");
     G.insertarNodo("Ecologia");
 
+    G.insertarNodo("Base de datos II");
+    G.insertarNodo("Analisis y disenho de algoritmos");
+    G.insertarNodo("Ingenieria de software I");
+    G.insertarNodo("Compiladores");
+    G.insertarNodo("Analisis exploratorio de datos espaciales");
+    G.insertarNodo("Ecuaciones diferenciales");
+    
+    G.insertarNodo("Programacion competitiva");
+    G.insertarNodo("Ingenieria de software");
+    G.insertarNodo("Estructura de datos avanzados");
+    G.insertarNodo("Sistemas operativos");
+    G.insertarNodo("Trabajo interdisciplinar II");
+    G.insertarNodo("Matematica aplicada a la computacion");
+
     G.insertarArista(1,"Estructura discretas I","Estructura Discretas II");
     G.insertarArista(1,"Fundamentos de la computacion","Estructura Discretas II");
     G.insertarArista(1,"Fundamentos de la computacion","Ciencia de la computacion I");
@@ -57,7 +72,24 @@ int main(){
     G.insertarArista(1,"Ciencia de la computacion I","Base de datos I");
     G.insertarArista(1,"Calculo en una variable","Algebra Lineal");
     G.insertarArista(1,"Calculo en varias Variables","Estadistica y probalidiades");
-    G.print();
+
+    G.insertarArista(1,"Base de datos I","Base de datos II");
+    G.insertarArista(1,"AED","Analisis y disenho de algoritmos");
+    G.insertarArista(1,"Ciencia de la computacion II","Ingenieria de software I");
+    G.insertarArista(1,"Base de datos I","Ingenieria de software I");
+    G.insertarArista(1,"Teoria de la computacion","Compiladores");
+    G.insertarArista(1,"Estadistica y probalidiades","Analisis exploratorio de datos espaciales");
+    G.insertarArista(1,"AED","Analisis exploratorio de datos espaciales");
+    G.insertarArista(1,"Calculo en varias Variables","Ecuaciones diferenciales");
+    G.insertarArista(1,"Algebra Lineal","Ecuaciones diferenciales");
+
+    G.insertarArista(1,"Analisis y disenho de algoritmos","Programacion competitiva");
+    G.insertarArista(1,"Ingenieria de software I","Ingenieria de software");
+    G.insertarArista(1,"Analisis y disenho de algoritmos","Estructura de datos avanzados");
+    G.insertarArista(1,"Arquitetura de computadoras","Sistemas operativos");
+    G.insertarArista(1,"Trabajo Interdiciplinar","Trabajo interdisciplinar II");
+    G.insertarArista(1,"Ecuaciones diferenciales","Matematica aplicada a la computacion");
+    G.print(grafo);
     vector<vector<int>> matrix = G.matrixAdyacencias();
     vector<int> indegree = G.CalcularIndegree(matrix);
     cout<<"\n\n\tOrden Topologico \n\n";
