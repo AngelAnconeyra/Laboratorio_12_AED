@@ -170,6 +170,7 @@ int Grafo<T,A>::EncuentraI0(vector<int> indegree){
     if(!encontrado){
         return -1;
     }
+    return -1;
 }
 
 template<class T, class A>
